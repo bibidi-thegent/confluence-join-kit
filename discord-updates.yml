@@ -1,0 +1,24 @@
+name: Discord update feed
+
+on:
+  push:
+    branches: [main] # change to [master] or add more branches as needed
+    # Uncomment to only post when plugin code changes:
+    # paths: ['plugins/**']
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
+      - name: Post changes to Discord
+        run: node .github/scripts/discord-notify.js
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # "" = flat file list, "." = group by top-level folder,
+          # "plugins" = group by each folder inside plugins/
+          PLUGIN_ROOT: '.'
+          DISCORD_USERNAME: 'Plugin Updates'
