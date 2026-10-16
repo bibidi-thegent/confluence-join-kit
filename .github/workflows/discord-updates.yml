@@ -1,0 +1,36 @@
+name: Discord update feed
+
+# Announces every published release (the join kit players must download) in Discord. The
+# push feed is off by default because the only pushes here are README syncs; uncomment the
+# push block to post commits too. "Run workflow" in the Actions tab posts the latest release
+# again, which is the way to test the webhook.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+  # push:
+  #   branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+
+      - name: Post to Discord
+        run: node .github/scripts/discord-notify.js
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISCORD_USERNAME: 'Confluence Updates'
+          # The server emblem, served from this repo (assets/emblem.png).
+          DISCORD_AVATAR_URL: 'https://raw.githubusercontent.com/${{ github.repository }}/main/assets/emblem.png'
+          # Optional: a role to ping on releases, as <@&ROLE_ID>, or @here / @everyone. Blank = no ping.
+          DISCORD_MENTION: ''
+          # Push feed grouping: "" flat, "." by top-level folder, "plugins" by folder under plugins/.
+          PLUGIN_ROOT: ''
