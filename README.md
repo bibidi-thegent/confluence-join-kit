@@ -4,15 +4,15 @@ You need a paid Minecraft: Java Edition account, the exact game version below, F
 mod jars, Tailscale, and a whitelist entry from Bibidi. Ten minutes the first time.
 
 **Download the kit:** https://github.com/bibidi-thegent/confluence-join-kit/releases/latest
-(the `.mrpack` for the Modrinth App or Prism, or the `-mods.zip` for a manual install). Each
-server update is a new release there; when the server tells you your mod is out of date, grab
-the newest one and replace the jar.
+(the `confluence-<version>-mc26.2-mods.zip` file). Each server update is a new release there,
+announced in Discord; when the server tells you your mod is out of date, download the newest
+zip and replace the jars.
 
 | What | Value |
 | --- | --- |
 | Minecraft | 26.2 (exactly; not 26.3) |
 | Mod loader | Fabric Loader 0.19.5 |
-| Mods | `fabric-api-0.161.0+26.2.jar` and `confluence-mod-0.1.0.jar` (both in the kit) |
+| Mods | `fabric-api-0.161.0+26.2.jar` and `confluence-mod-0.1.0.jar` (both in the kit zip) |
 | Network | Tailscale (free), connected to Bibidi's shared machine |
 | Server address | Bibidi's Tailscale IP, port 25565 (he sends it to you) |
 
@@ -22,18 +22,17 @@ Minecraft with none of the abilities.
 
 ## 1. Install the game files
 
-**Easiest: the Modrinth App or Prism Launcher.** Install either launcher, then import the
-`confluence-<version>-mc26.2.mrpack` file from the kit (Modrinth App: Library, the plus button,
-"From file"; Prism: Add Instance, Import). It creates an instance with Minecraft 26.2, Fabric
-0.19.5 and both mods. Sign in with your Microsoft account inside the launcher.
+1. Install Fabric once: run the installer from fabricmc.net, pick game version **26.2** and
+   loader **0.19.5**, Client, Install. It adds a profile named `fabric-loader-0.19.5-26.2` to
+   the official launcher.
+2. Unzip the kit. Open `%APPDATA%\.minecraft\mods` (paste that into the Explorer address bar;
+   make the folder if it is missing) and copy both jars from the zip's `mods` folder into it.
+   On an update, replace the old `confluence-mod-*.jar` with the new one; Fabric API only
+   changes when the game version does.
+3. In the official launcher, select the `fabric-loader-0.19.5-26.2` profile and play.
 
-**Manual, with the official launcher.** Run the Fabric installer from fabricmc.net, pick game
-version 26.2 and loader 0.19.5, and install the client. Open `%APPDATA%\.minecraft\mods` (make
-the folder if it is missing) and copy both jars from the kit's `mods` folder into it. In the
-official launcher, play the profile named `fabric-loader-0.19.5-26.2`.
-
-Either way, the first launch should show in the log: `Loading Minecraft 26.2 with Fabric Loader
-0.19.5` and a line `Confluence client ready`.
+The first launch should show in the log: `Loading Minecraft 26.2 with Fabric Loader 0.19.5`
+and a line `Confluence client ready`.
 
 ## 2. Install Tailscale and accept the share
 
@@ -46,7 +45,7 @@ Either way, the first launch should show in the log: `Loading Minecraft 26.2 wit
 ## 3. Join
 
 1. Tell Bibidi your exact Minecraft name so he can whitelist you.
-2. Start the Fabric instance, Multiplayer, Add Server, address `100.x.y.z` (the address from
+2. Start the Fabric profile, Multiplayer, Add Server, address `100.x.y.z` (the address from
    step 2; the default port is fine), Join.
 3. You should land in the hub with the Confluence HUD: a nine-slot ability bar, your health and
    resource, and a level tag. If you see the vanilla hotbar instead, your mod jar does not match
