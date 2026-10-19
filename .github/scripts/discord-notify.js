@@ -2,15 +2,21 @@
 // reads the event payload from GITHUB_EVENT_PATH. No dependencies: needs Node 18+ (fetch).
 //
 // Events:
-//   release (published)  one embed: the release name, its notes, every asset as a download link
-//                        with its size, and the repo's "latest release" link. This is the one
-//                        players need: a new kit means a new jar to install.
-//   workflow_dispatch    re-posts the repo's latest release (fetched with GITHUB_TOKEN). Use the
-//                        "Run workflow" button to test the webhook.
+//   release (published)  one embed: the release name, its install notes, every asset as a download
+//                        link with its size, and the repo's "latest release" link. This is the one
+//                        players need: a new kit means a new jar to install. When the release notes
+//                        carry a "## Update summary" section and DISCORD_BOT_TOKEN is set, a thread
+//                        is opened on that announcement and the summary is posted in it, split into
+//                        Discord-sized messages (the change summary that used to be pasted by hand).
+//   workflow_dispatch    re-posts the repo's latest release (fetched with GITHUB_TOKEN), thread
+//                        included. Use the "Run workflow" button to test the webhook and the bot.
 //   push                 one embed per commit with its changed files (the old commit feed).
 //
 // Environment:
 //   DISCORD_WEBHOOK_URL  required (unless DRY_RUN=1) - the channel webhook URL
+//   DISCORD_BOT_TOKEN    optional - a bot in the server with View Channels, Send Messages, Create
+//                        Public Threads, Send Messages in Threads and Read Message History in the
+//                        webhook's channel; without it the summary thread is skipped with a log line
 //   GITHUB_TOKEN         needed by workflow_dispatch to read the latest release
 //   DISCORD_USERNAME     optional - name the posts appear under
 //   DISCORD_AVATAR_URL   optional - avatar image for the posts
@@ -21,19 +27,23 @@
 const fs = require('fs');
 
 const WEBHOOK = process.env.DISCORD_WEBHOOK_URL;
+const BOT_TOKEN = (process.env.DISCORD_BOT_TOKEN || '').trim();
 const TOKEN = process.env.GITHUB_TOKEN;
 const PLUGIN_ROOT = (process.env.PLUGIN_ROOT || '').replace(/^\/+|\/+$/g, '');
 const USERNAME = process.env.DISCORD_USERNAME || 'Updates';
 const AVATAR_URL = process.env.DISCORD_AVATAR_URL || undefined;
 const MENTION = (process.env.DISCORD_MENTION || '').trim();
 const DRY_RUN = process.env.DRY_RUN === '1';
+const API = 'https://discord.com/api/v10';
 
 // Discord limits: 10 embeds and 6000 embed characters per message, 4096 per description,
-// 256 per title, 25 fields of 1024 characters.
+// 256 per title, 25 fields of 1024 characters, 2000 characters per plain message, 100 per thread name.
 const MAX_EMBEDS = 10;
 const MAX_MESSAGE_CHARS = 5800;
 const MAX_DESCRIPTION = 4000;
 const MAX_FIELD = 1000;
+const MAX_CONTENT = 1900;
+const SUMMARY_HEADING = /^##\s+Update summary\s*$/m;
 
 const ICONS = { added: '🟢', modified: '🟡', removed: '🔴' };
 const COLORS = { added: 0x2ecc71, modified: 0xf1c40f, removed: 0xe74c3c, mixed: 0x5865f2, release: 0x9b59b6 };
@@ -45,15 +55,25 @@ const humanSize = (n) => (n >= 1 << 20 ? `${(n / (1 << 20)).toFixed(1)} MB` : n 
 
 // ---- releases -------------------------------------------------------------------------------
 
+// The release notes are the install lines plus, optionally, "## Update summary" and the summary.
+// The embed shows the install lines; the summary goes to the thread.
+function splitNotes(body) {
+  const text = (body || '').replace(/\r\n/g, '\n').trim();
+  const m = SUMMARY_HEADING.exec(text);
+  if (!m) return { install: text, summary: '' };
+  return { install: text.slice(0, m.index).trim(), summary: text.slice(m.index + m[0].length).trim() };
+}
+
 function releaseEmbed(release, repo) {
   const assets = release.assets || [];
   const lines = assets.map((a) => `⬇️ [${escapeMd(a.name)}](${a.browser_download_url}) (${humanSize(a.size || 0)})`);
-  const notes = (release.body || '').trim();
+  const { install, summary } = splitNotes(release.body);
   const description = [
-    notes ? truncate(notes, 1500) : '',
+    install ? truncate(install, 1500) : '',
     '',
+    summary ? '_What changed: see the thread below._' : '',
     `**Latest release:** <${repo.html_url}/releases/latest>`,
-  ].join('\n').trim();
+  ].filter((l, i, arr) => l !== '' || (i > 0 && arr[i - 1] !== '')).join('\n').trim();
   const fields = [];
   if (lines.length) {
     // Keep each field under Discord's limit; a kit has two or three assets, so one field.
@@ -93,6 +113,36 @@ async function latestRelease(repo) {
   });
   if (!res.ok) throw new Error(`GitHub returned ${res.status} for the latest release: ${await res.text()}`);
   return res.json();
+}
+
+// Splits markdown into Discord messages: on blank lines first, then on single lines, never inside
+// a fenced code block when it can be helped, each piece under MAX_CONTENT characters.
+function chunkMarkdown(text) {
+  const paragraphs = text.replace(/\r\n/g, '\n').split(/\n{2,}/);
+  const chunks = [];
+  let current = '';
+  const push = () => { if (current.trim()) chunks.push(current.trim()); current = ''; };
+  for (const para of paragraphs) {
+    const pieces = para.length > MAX_CONTENT ? splitLines(para) : [para];
+    for (const piece of pieces) {
+      if (current && current.length + piece.length + 2 > MAX_CONTENT) push();
+      current += (current ? '\n\n' : '') + piece;
+    }
+  }
+  push();
+  return chunks;
+}
+
+function splitLines(para) {
+  const out = [];
+  let current = '';
+  for (const line of para.split('\n')) {
+    const l = line.length > MAX_CONTENT ? truncate(line, MAX_CONTENT) : line;
+    if (current && current.length + l.length + 1 > MAX_CONTENT) { out.push(current); current = ''; }
+    current += (current ? '\n' : '') + l;
+  }
+  if (current) out.push(current);
+  return out;
 }
 
 // ---- pushes ---------------------------------------------------------------------------------
@@ -176,15 +226,18 @@ function allowedMentions() {
   return m;
 }
 
-async function send(payload) {
+// One Discord call with the 429 back-off; returns the parsed JSON (webhook calls use ?wait=true
+// so the created message comes back with its id and channel_id).
+async function discord(url, payload, headers) {
   if (DRY_RUN) {
+    console.log(`DRY RUN ${url.replace(/\/webhooks\/[^?]+/, '/webhooks/…')}`);
     console.log(JSON.stringify(payload, null, 2));
-    return;
+    return { id: 'dry-message', channel_id: 'dry-channel' };
   }
   for (let attempt = 0; attempt < 5; attempt++) {
-    const res = await fetch(`${WEBHOOK}?wait=true`, {
+    const res = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', ...headers },
       body: JSON.stringify(payload),
     });
     if (res.status === 429) {
@@ -193,14 +246,35 @@ async function send(payload) {
       continue;
     }
     if (!res.ok) throw new Error(`Discord returned ${res.status}: ${await res.text()}`);
+    return res.status === 204 ? {} : res.json();
+  }
+  throw new Error('Discord kept rate-limiting; giving up.');
+}
+
+const send = (payload) => discord(`${WEBHOOK}?wait=true`, payload);
+const bot = (path, payload) => discord(`${API}${path}`, payload, { Authorization: `Bot ${BOT_TOKEN}` });
+
+// Opens a thread on the announcement and posts the summary in it, one message per chunk.
+async function postSummaryThread(message, release, summary) {
+  if (!BOT_TOKEN) {
+    console.log('No DISCORD_BOT_TOKEN: the update summary was not posted (it is in the release notes).');
     return;
   }
-  throw new Error('Discord kept rate-limiting the webhook; giving up.');
+  const name = truncate(`Update ${release.name || release.tag_name}`, 100);
+  const thread = await bot(`/channels/${message.channel_id}/messages/${message.id}/threads`, {
+    name,
+    auto_archive_duration: 10080,
+  });
+  const chunks = chunkMarkdown(summary);
+  for (const content of chunks) {
+    await bot(`/channels/${thread.id}/messages`, { content, allowed_mentions: { parse: [] } });
+  }
+  console.log(`Opened thread "${name}" and posted the summary in ${chunks.length} message(s).`);
 }
 
 async function postRelease(release, repo) {
   const header = `${MENTION ? MENTION + ' ' : ''}📦 **New ${escapeMd(repo.name)} release:** ${escapeMd(release.name || release.tag_name)}. Replace your Confluence jar before joining.`;
-  await send({
+  const message = await send({
     username: USERNAME,
     avatar_url: AVATAR_URL,
     content: header,
@@ -208,6 +282,18 @@ async function postRelease(release, repo) {
     allowed_mentions: allowedMentions(),
   });
   console.log(`Posted release ${release.tag_name}.`);
+  const { summary } = splitNotes(release.body);
+  if (!summary) {
+    console.log('The release notes have no "## Update summary" section; no thread.');
+    return;
+  }
+  try {
+    await postSummaryThread(message, release, summary);
+  } catch (err) {
+    // The announcement is out; a thread failure must not fail the run twice over.
+    console.error(`The summary thread failed: ${err.message}`);
+    process.exitCode = 1;
+  }
 }
 
 async function postPush(event) {
