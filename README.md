@@ -63,14 +63,21 @@ and a line `Confluence client ready`.
 | Tab | Cycle target (closest to the crosshair first) |
 | Shift | Evade (dodge roll); C crouches in combat mode |
 | B | Switch between combat mode and survival mode |
-| K | Spell Book: every ability explained, swap your class with the Play button |
-| M | Map (party members are marked) |
-| I | Inventory |
+| K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery |
+| M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
+| I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z) |
 | V | Town edit mode (mayors only) |
 
 Chat commands worth knowing: `/cf kit` opens the class picker, `/cf loadout` picks your abilities
 from the pools, `/cf party invite <name>` and `/cf party accept` form a party, `/cf hub` returns
-to the hub.
+to the hub, and `/cf` alone lists every command by group (`/cf help town` shows one group).
+`/cf lock` then a right-click locks a chest, door or trapdoor to you (`/cf lock add <name>` shares
+it). A sign with `[lift]` on its second line is a lift: put one on each floor straight above each
+other, left-click a lift sign to ride up and right-click to ride down (sneak to break the sign).
+Dying in the survival world drops your bag where you died (your hotbar slot 1, worn armour,
+off-hand, shulker boxes and Breach gear stay) and resets your XP levels; the map's skull shows the spot
+until you walk back to it. A red skull beside your target's name means a ready key would kill it now: that key's
+cap is outlined in red.
 
 ## If it does not work
 
