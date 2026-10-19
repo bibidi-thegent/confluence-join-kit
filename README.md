@@ -67,6 +67,7 @@ and a line `Confluence client ready`.
 | M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
 | I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z) |
 | V | Town edit mode (mayors only) |
+| (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
 
 Chat commands worth knowing: `/cf kit` opens the class picker, `/cf loadout` picks your abilities
 from the pools, `/cf party invite <name>` and `/cf party accept` form a party, `/cf hub` returns
@@ -77,7 +78,9 @@ other, left-click a lift sign to ride up and right-click to ride down (sneak to 
 Dying in the survival world drops your bag where you died (your hotbar slot 1, worn armour,
 off-hand, shulker boxes and Breach gear stay) and resets your XP levels; the map's skull shows the spot
 until you walk back to it. A red skull beside your target's name means a ready key would kill it now: that key's
-cap is outlined in red.
+cap is outlined in red. Heals float as green numbers over the player they land on and your log names both sides ("You
+healed Bob 570"); a heal past full leaves a small shield. When a run ends a breakdown of everyone's damage and healing
+opens (Esc closes it) and goes to chat; `/cf meter` shows it again.
 
 ## If it does not work
 
