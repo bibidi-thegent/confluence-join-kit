@@ -56,8 +56,8 @@ and a line `Confluence client ready`.
 | Key | What |
 | --- | --- |
 | 1 2 3 4 | Core abilities |
-| Q E | Utility abilities |
-| R | Talent |
+| Q | Talent: lights gold with a chime when its trigger is met (opens at Discipline level 10) |
+| E R | Utility abilities |
 | F | Signature |
 | G | Defensive |
 | Tab | Cycle target (closest to the crosshair first) |
