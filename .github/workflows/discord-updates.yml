@@ -1,9 +1,14 @@
 name: Discord update feed
 
-# Announces every published release (the join kit players must download) in Discord. The
-# push feed is off by default because the only pushes here are README syncs; uncomment the
+# Announces every published release (the join kit players must download) in Discord, then opens a
+# thread on that announcement and posts the release's "## Update summary" section in it (the
+# change summary Bibidi used to paste by hand). The announcement goes through the channel webhook;
+# the thread and its posts need a bot (DISCORD_BOT_TOKEN) with View Channels, Send Messages,
+# Create Public Threads, Send Messages in Threads and Read Message History in that channel. With
+# no bot token the announcement still posts and the summary is skipped with a log line.
+# The push feed is off by default because the only pushes here are README syncs; uncomment the
 # push block to post commits too. "Run workflow" in the Actions tab posts the latest release
-# again, which is the way to test the webhook.
+# again (thread included), which is the way to test the webhook and the bot.
 on:
   release:
     types: [published]
@@ -26,6 +31,7 @@ jobs:
         run: node .github/scripts/discord-notify.js
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DISCORD_USERNAME: 'Confluence Updates'
           # The server emblem, served from this repo (assets/emblem.png).
