@@ -69,10 +69,13 @@ and a line `Confluence client ready`.
 | V | Town edit mode (mayors only) |
 | (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
 
-**Survival HUD.** In survival mode (B) in the survival worlds your Core level and Discipline tag step aside. Hold a
-pickaxe, shovel, axe, hoe or rod and one block over your health bar shows that profession alone: its level and XP and
-its skill, with the cooldown's seconds on a ring, "Ready: right-click to prime" (sneak + right-click for the rod),
-"Primed" or "Active". Hold anything else (a sword, a block, nothing) and nothing shows. Combat mode looks as before.
+**Survival HUD.** In survival mode (B) in the survival worlds your Core level and Discipline tag step aside, and so do
+the resource bar and the Evade squares (no Evade or casts there). Hold a pickaxe, shovel, axe, hoe or rod and the bar
+under your health shows that profession alone: its name and level on the left, its XP on the right, filling in its
+colour; right of the bars its skill beside a ring that refills as the cooldown runs: its name, and under it the seconds
+left, "Ready: right-click" ("Ready: sneak + right-click" for the rod), "Primed" or "Active". Hold anything else (a sword,
+a block, nothing) and that bar stays empty.
+Combat mode looks as before.
 
 **Professions.** Mining, Excavating, Lumberjack, Farming and Fishing level from 1 to 50 by gathering in the survival
 world, the frontier and their Nethers and Ends (never in the hub or a Breach). Each has a Knack, a double-drop chance that
