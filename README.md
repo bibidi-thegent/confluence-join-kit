@@ -82,6 +82,15 @@ cap is outlined in red. Heals float as green numbers over the player they land o
 healed Bob 570"); a heal past full leaves a small shield. When a run ends a breakdown of everyone's damage and healing
 opens (Esc closes it) and goes to chat; `/cf meter` shows it again.
 
+**The raid.** Threshold Manor is entered at the **Raid Gate**: walk out along the plaza's east arm to the
+terrace and step through the dark oak gate (the sign says "Threshold Manor"); its menu lists the two manor
+tiers (the Breach Vendor still sells every tier). The Rehearsal is free and takes anyone, alone or in a party,
+to learn the fights; the Soiree is the raid proper (a party of two or more, Core Level 15 and a Warden's Breach
+clear). Soiree loot is locked out per boss room each week: once you have been there for a boss room's clear,
+you can still help friends through it (kill XP and tokens as usual) but its chest, Shards, relic and clear bonus
+wait for Monday's reset. `/cf raid lockouts` shows yours. If your connection drops during a run you have 5
+minutes to log back in: you come back in the same room with your loot and stats, not in the hub.
+
 ## If it does not work
 
 - **"Data mismatch" or vanilla hotbar after joining**: your Confluence jar is older or newer
