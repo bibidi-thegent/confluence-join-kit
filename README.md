@@ -63,7 +63,7 @@ and a line `Confluence client ready`.
 | Tab | Cycle target (closest to the crosshair first) |
 | Shift | Evade (dodge roll); C crouches in combat mode |
 | B | Switch between combat mode and survival mode |
-| K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery |
+| K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery; the last tab, Professions, shows each profession's Knack, ranks and Prime |
 | M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
 | I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault) |
 | V | Town edit mode (mayors only) |
@@ -73,6 +73,22 @@ and a line `Confluence client ready`.
 pickaxe, shovel, axe, hoe or rod and one block over your health bar shows that profession alone: its level and XP and
 its skill, with the cooldown's seconds on a ring, "Ready: right-click to prime" (sneak + right-click for the rod),
 "Primed" or "Active". Hold anything else (a sword, a block, nothing) and nothing shows. Combat mode looks as before.
+
+**Professions.** Mining, Excavating, Lumberjack, Farming and Fishing level from 1 to 50 by gathering in the survival
+world, the frontier and their Nethers and Ends (never in the hub or a Breach). Each has a Knack, a double-drop chance that
+grows with every level (a triple from level 40), ranks that open at their levels ("Rank 1 unlocked: Crop Sense") and its
+Prime (right-click the tool). Press K and open the Professions tab for every number; `/cf professions` lists the levels.
+Blocks a player placed, generator stone and an over-fished spot pay nothing, so gather from the world. In a party, the
+gathering XP is shared with the members within 50 blocks (each gets 1.5 x the XP / the sharers); the leader turns it off
+with `/cf party share off` (and on again with `/cf party share on`). Every tenth level is announced in your world's chat.
+Mining, Excavating and Lumberjack have their full ranks: Ore Sense (ores glow through stone while you hold a pickaxe,
+from Mining 10), Breaker Charges (sneak + right-click TNT with a pickaxe, from 20), Unearthing (digging turns up finds the
+Hub Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
+unbound show / hide key in Controls ('Ore, Burrow, Hollow, Deep Sense: show / hide').
+Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
+Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches come up as tools, armour,
+books and finds the Hub Market buys, from Fishing 5), Hooked (reel in a mob to shake a drop off it), Ice Fishing, Enchanted
+Lines and Deep Sense (treasure hotspots shimmer on the water while you hold a rod, from Fishing 35; the same Senses key).
 
 Chat commands worth knowing: `/cf kit` opens the class picker, `/cf loadout` picks your abilities
 from the pools, `/cf party invite <name>` and `/cf party accept` form a party, `/cf hub` returns
