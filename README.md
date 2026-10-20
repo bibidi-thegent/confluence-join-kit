@@ -65,13 +65,21 @@ and a line `Confluence client ready`.
 | B | Switch between combat mode and survival mode |
 | K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery |
 | M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
-| I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z) |
+| I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault) |
 | V | Town edit mode (mayors only) |
 | (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
+
+**Survival HUD.** In survival mode (B) in the survival worlds your Core level and Discipline tag step aside. Hold a
+pickaxe, shovel, axe, hoe or rod and one block over your health bar shows that profession alone: its level and XP and
+its skill, with the cooldown's seconds on a ring, "Ready: right-click to prime" (sneak + right-click for the rod),
+"Primed" or "Active". Hold anything else (a sword, a block, nothing) and nothing shows. Combat mode looks as before.
 
 Chat commands worth knowing: `/cf kit` opens the class picker, `/cf loadout` picks your abilities
 from the pools, `/cf party invite <name>` and `/cf party accept` form a party, `/cf hub` returns
 to the hub, and `/cf` alone lists every command by group (`/cf help town` shows one group).
+Combat mode in the wilds (the survival world, its Nether and End) needs the **Wilds Pass**: kill the Ender Dragon
+(everyone at the kill gets a Dragon Egg, party members in the End too) and trade the egg to the Town Warden; until then B
+keeps you in survival mode out there (the hub, the arena and the Breaches stay combat), and `/cf wilds` shows your pass.
 `/cf lock` then a right-click locks a chest, door or trapdoor to you (`/cf lock add <name>` shares
 it). A sign with `[lift]` on its second line is a lift: put one on each floor straight above each
 other, left-click a lift sign to ride up and right-click to ride down (sneak to break the sign).
