@@ -8,6 +8,8 @@ mod jars, Tailscale, and a whitelist entry from Bibidi. Ten minutes the first ti
 announced in Discord; when the server tells you your mod is out of date, download the newest
 zip and replace the jars.
 
+**Player Guide:** https://github.com/bibidi-thegent/confluence-join-kit/blob/main/PLAYER-GUIDE.md (every class, profession and system; its top line says when it last changed).
+
 | What | Value |
 | --- | --- |
 | Minecraft | 26.2 (exactly; not 26.3) |
@@ -65,32 +67,36 @@ and a line `Confluence client ready`.
 | B | Switch between combat mode and survival mode |
 | K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery; the last tab, Professions, shows each profession's Knack, ranks and Prime |
 | M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
-| I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault) |
+| I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault). A pack's window has the **Overflow** button, the hopper at the right end of the row under the pack's cells: switched on, what you pick up with a full bag flows into that pack |
 | V | Town edit mode (mayors only) |
 | (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
 
 **Survival HUD.** In survival mode (B) in the survival worlds your Core level and Discipline tag step aside, and so do
-the resource bar and the Evade squares (no Evade or casts there). Hold a pickaxe, shovel, axe, hoe or rod and the bar
-under your health shows that profession alone: its name and level on the left, its XP on the right, filling in its
-colour; right of the bars its skill beside a ring that refills as the cooldown runs: its name, and under it the seconds
-left, "Ready: right-click" ("Ready: sneak + right-click" for the rod), "Primed" or "Active". Hold anything else (a sword,
-a block, nothing) and that bar stays empty.
+the resource bar and the Evade squares (no Evade or casts there). Hold a pickaxe, shovel, axe, hoe, rod or weapon (a sword,
+a bow, a crossbow, a trident, a mace: Hunting), look at a Smithing Table, Grindstone, furnace (Smithing) or brewing stand
+(Alchemy) within reach, or punch something with an empty hand (Unarmed, for 10 s), and the bar under your health shows that
+profession alone: its name and level on the left, its XP on the right, filling in its colour; right of the bars its skill
+beside a ring that refills as the cooldown runs: its name, and under it the seconds left, "Ready: right-click" ("Ready:
+sneak + right-click" for the rod and the newer professions), "Primed" or "Active". From Hunting 20 a line under Hunting's bar
+counts the hostiles near you ("4 hostiles, north-east"). Hold anything else (a block, nothing) and that bar stays empty.
 Combat mode looks as before.
 
-**Professions.** Mining, Excavating, Lumberjack, Farming and Fishing level from 1 to 50 by gathering in the survival
-world, the frontier and their Nethers and Ends, and the Quarry (never in the hub or a Breach). Each has a Knack, a
-double-drop chance that grows with every level (a triple from level 40), ranks that open at their levels ("Rank 1
-unlocked: Crop Sense") and its Prime (right-click the tool). Press K and open the Professions tab for every number;
-`/cf professions` lists the levels.
+**Professions.** Ten professions level from 1 to 50 in the survival world, the frontier and their Nethers and Ends, and
+the Quarry (never in the hub or a Breach): Mining, Excavating, Lumberjack, Farming and Fishing by gathering, Smithing
+(repairs at a Smithing Table, salvage at a Grindstone, your furnaces), Alchemy (brewing in your own stands), Hunting (kills
+with a weapon), Acrobatics (falls that hurt; none in the Quarry) and Unarmed (your fists). Each has a Knack that grows with
+every level, ranks that open at their levels ("Rank 1 unlocked: Crop Sense") and, Acrobatics aside, its Prime (right-click
+the tool; a sneaking right-click for the newer five). Press K and open the Professions tab for every number;
+`/cf professions` lists the levels; the Player Guide has a post for each.
 Blocks a player placed, generator stone and an over-fished spot pay nothing, so gather from the world. In a party, the
-gathering XP is shared with the members within 50 blocks (each gets 1.5 x the XP / the sharers); the leader turns it off
+profession XP is shared with the members within 50 blocks (each gets 1.5 x the XP / the sharers); the leader turns it off
 with `/cf party share off` (and on again with `/cf party share on`). Every tenth level is announced in your world's chat.
 Mining, Excavating and Lumberjack have their full ranks: Ore Sense (from Mining 10: craft a Prospector's Fork from two
 iron ingots side by side over a stick, hold an ore's metal in your off hand and left-click stone; three sonar waves
 flash that ore through the stone, then the fork rings again after a few minutes), Breaker Charges (sneak + right-click
 TNT with a pickaxe, from 20; only where TNT may go off, which is the Quarry), Unearthing (digging turns up finds the Hub
 Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
-unbound show / hide key in Controls ('Burrow, Hollow, Deep Sense: show / hide'; the fork's ping is never hidden).
+unbound show / hide key in Controls ('Burrow, Hollow, Deep, Beast Sense: show / hide'; the fork's ping is never hidden).
 Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
 Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches come up as tools, armour,
 books and finds the Hub Market buys, from Fishing 5), Hooked (reel in a mob to shake a drop off it), Ice Fishing, Enchanted
@@ -136,6 +142,14 @@ Curator trades them for prizes, and Sunday at 20:00 a raffle draws from the week
 
 **Deeds.** Achievements in the Confluence Deeds tab of the Advancements screen (L), with toasts, Deed Points on the hub's
 board and three titles to earn (`/cf deeds`).
+
+**Packs.** A shulker box equipped as a pack takes the overflow of a full bag once you switch it on: the Overflow button (the
+hopper at the right end of the row under the pack's cells) or `/cf pack overflow <1|2|3> on|off`; `/cf pack` lists your packs and their switch. A
+stack of the same item in a pack fills first, then that pack's empty cells, then the other packs in order; shulker boxes
+and Breach gear never flow, and packs are put away in the Breaches.
+
+**Hub signs.** Floating names over the hub's places (the dais, the plaza, every gate, the Records, the Calendar, the
+Market, the Breaches, the Arena and the Spire) turn to face you; the signs with the rules are still beside them.
 
 ## If it does not work
 
