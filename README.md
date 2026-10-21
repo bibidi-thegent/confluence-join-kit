@@ -78,14 +78,16 @@ a block, nothing) and that bar stays empty.
 Combat mode looks as before.
 
 **Professions.** Mining, Excavating, Lumberjack, Farming and Fishing level from 1 to 50 by gathering in the survival
-world, the frontier and their Nethers and Ends (never in the hub or a Breach). Each has a Knack, a double-drop chance that
-grows with every level (a triple from level 40), ranks that open at their levels ("Rank 1 unlocked: Crop Sense") and its
-Prime (right-click the tool). Press K and open the Professions tab for every number; `/cf professions` lists the levels.
+world, the frontier and their Nethers and Ends, and the Quarry (never in the hub or a Breach). Each has a Knack, a
+double-drop chance that grows with every level (a triple from level 40), ranks that open at their levels ("Rank 1
+unlocked: Crop Sense") and its Prime (right-click the tool). Press K and open the Professions tab for every number;
+`/cf professions` lists the levels.
 Blocks a player placed, generator stone and an over-fished spot pay nothing, so gather from the world. In a party, the
 gathering XP is shared with the members within 50 blocks (each gets 1.5 x the XP / the sharers); the leader turns it off
 with `/cf party share off` (and on again with `/cf party share on`). Every tenth level is announced in your world's chat.
 Mining, Excavating and Lumberjack have their full ranks: Ore Sense (ores glow through stone while you hold a pickaxe,
-from Mining 10), Breaker Charges (sneak + right-click TNT with a pickaxe, from 20), Unearthing (digging turns up finds the
+from Mining 10), Breaker Charges (sneak + right-click TNT with a pickaxe, from 20; only where TNT may go off, which
+is the Quarry), Unearthing (digging turns up finds the
 Hub Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
 unbound show / hide key in Controls ('Ore, Burrow, Hollow, Deep Sense: show / hide').
 Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
@@ -117,6 +119,13 @@ clear). Soiree loot is locked out per boss room each week: once you have been th
 you can still help friends through it (kill XP and tokens as usual) but its chest, Shards, relic and clear bonus
 wait for Monday's reset. `/cf raid lockouts` shows yours. If your connection drops during a run you have 5
 minutes to log back in: you come back in the same room with your loot and stats, not in the hub.
+
+**The Quarry.** A Peaceful world for digging in bulk through the sandstone Quarry Gate, 16 blocks north of the World
+Gate: one Quarry Ticket (Breach and Manor chests, Excavating, or ¥400 at the Town Warden) buys an hour, nothing hurts
+you there, TNT works, and it is wiped every Sunday at 04:00 (`/cf quarry` shows your tickets and time).
+
+**The hub gates.** By the World Gate: the Nether Gate (one Ghast Tear to the Town Warden) and the End Gate
+(Wilds Pass holders and their party), `/cf gates`.
 
 ## If it does not work
 
