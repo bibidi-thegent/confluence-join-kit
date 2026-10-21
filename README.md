@@ -85,11 +85,12 @@ unlocked: Crop Sense") and its Prime (right-click the tool). Press K and open th
 Blocks a player placed, generator stone and an over-fished spot pay nothing, so gather from the world. In a party, the
 gathering XP is shared with the members within 50 blocks (each gets 1.5 x the XP / the sharers); the leader turns it off
 with `/cf party share off` (and on again with `/cf party share on`). Every tenth level is announced in your world's chat.
-Mining, Excavating and Lumberjack have their full ranks: Ore Sense (ores glow through stone while you hold a pickaxe,
-from Mining 10), Breaker Charges (sneak + right-click TNT with a pickaxe, from 20; only where TNT may go off, which
-is the Quarry), Unearthing (digging turns up finds the
-Hub Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
-unbound show / hide key in Controls ('Ore, Burrow, Hollow, Deep Sense: show / hide').
+Mining, Excavating and Lumberjack have their full ranks: Ore Sense (from Mining 10: craft a Prospector's Fork from two
+iron ingots side by side over a stick, hold an ore's metal in your off hand and left-click stone; three sonar waves
+flash that ore through the stone, then the fork rings again after a few minutes), Breaker Charges (sneak + right-click
+TNT with a pickaxe, from 20; only where TNT may go off, which is the Quarry), Unearthing (digging turns up finds the Hub
+Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
+unbound show / hide key in Controls ('Burrow, Hollow, Deep Sense: show / hide'; the fork's ping is never hidden).
 Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
 Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches come up as tools, armour,
 books and finds the Hub Market buys, from Fishing 5), Hooked (reel in a mob to shake a drop off it), Ice Fishing, Enchanted
@@ -122,10 +123,19 @@ minutes to log back in: you come back in the same room with your loot and stats,
 
 **The Quarry.** A Peaceful world for digging in bulk through the sandstone Quarry Gate, 16 blocks north of the World
 Gate: one Quarry Ticket (Breach and Manor chests, Excavating, or ¥400 at the Town Warden) buys an hour, nothing hurts
-you there, TNT works, and it is wiped every Sunday at 04:00 (`/cf quarry` shows your tickets and time).
+you there, TNT works, and it is wiped every Sunday at 04:00 back to the same map (`/cf quarry` shows your tickets and
+time). You arrive on the Quarry hub, a sky platform with fourteen portals: pick the biome you came to dig (Desert,
+Badlands, Forest, Taiga, Jungle, Swamp, Mountains, Ocean, Savanna, Snowy, Cherry, Dark Forest, Mushroom, Lush Caves) and
+the frame on its pad brings you back.
 
 **The hub gates.** By the World Gate: the Nether Gate (one Ghast Tear to the Town Warden) and the End Gate
 (Wilds Pass holders and their party), `/cf gates`.
+
+**Echoes.** Once a day step onto the Calendar's amethyst sill east of the plaza for an Echo; the Chronicler beside the
+Curator trades them for prizes, and Sunday at 20:00 a raffle draws from the week's Echoes (`/cf echoes`).
+
+**Deeds.** Achievements in the Confluence Deeds tab of the Advancements screen (L), with toasts, Deed Points on the hub's
+board and three titles to earn (`/cf deeds`).
 
 ## If it does not work
 
