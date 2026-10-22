@@ -95,8 +95,8 @@ Mining, Excavating and Lumberjack have their full ranks: Ore Sense (from Mining 
 iron ingots side by side over a stick, hold an ore's metal in your off hand and left-click stone; three sonar waves
 flash that ore through the stone, then the fork rings again after a few minutes), Breaker Charges (sneak + right-click
 TNT with a pickaxe, from 20; only where TNT may go off, which is the Quarry), Unearthing (digging turns up finds the Hub
-Market buys, from Excavating 5), Burrow and Hollow Sense, Clear Cut, Seedfall and Lumber Yard. The Senses have an
-unbound show / hide key in Controls ('Burrow, Hollow, Deep, Beast Sense: show / hide'; the fork's ping is never hidden).
+Market buys, from Excavating 5), Clear Cut, Seedfall and Lumber Yard (Burrow and Hollow Sense were removed on 2026-10-22).
+The Senses have an unbound show / hide key in Controls ('Deep, Beast Sense: show / hide'; the fork's ping is never hidden).
 Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
 Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches come up as tools, armour,
 books and finds the Hub Market buys, from Fishing 5), Hooked (reel in a mob to shake a drop off it), Ice Fishing, Enchanted
@@ -119,7 +119,7 @@ healed Bob 570"); a heal past full leaves a small shield. When a run ends a brea
 opens (Esc closes it) and goes to chat; `/cf meter` shows it again.
 
 **The raid.** Threshold Manor is entered at the **Raid Gate**: walk out along the plaza's east arm to the
-terrace and step through the dark oak gate (the sign says "Threshold Manor"); its menu lists the two manor
+terrace and step through the dark oak gate (its floating name reads "Raid Gate", "Threshold Manor"); its menu lists the two manor
 tiers (the Breach Vendor still sells every tier). The Rehearsal is free and takes anyone, alone or in a party,
 to learn the fights; the Soiree is the raid proper (a party of two or more, Core Level 15 and a Warden's Breach
 clear). Soiree loot is locked out per boss room each week: once you have been there for a boss room's clear,
@@ -127,8 +127,8 @@ you can still help friends through it (kill XP and tokens as usual) but its ches
 wait for Monday's reset. `/cf raid lockouts` shows yours. If your connection drops during a run you have 5
 minutes to log back in: you come back in the same room with your loot and stats, not in the hub.
 
-**The Quarry.** A Peaceful world for digging in bulk through the sandstone Quarry Gate, 16 blocks north of the World
-Gate: one Quarry Ticket (Breach and Manor chests, Excavating, or ¥400 at the Town Warden) buys an hour, nothing hurts
+**The Quarry.** A Peaceful world for digging in bulk through the sandstone Quarry Gate beside the Raid Gate's terrace,
+north of the plaza's east arm: one Quarry Ticket (Breach and Manor chests, Excavating, or ¥400 at the Town Warden) buys an hour, nothing hurts
 you there, TNT works, and it is wiped every Sunday at 04:00 back to the same map (`/cf quarry` shows your tickets and
 time). You arrive on the Quarry hub, a sky platform with fourteen portals: pick the biome you came to dig (Desert,
 Badlands, Forest, Taiga, Jungle, Swamp, Mountains, Ocean, Savanna, Snowy, Cherry, Dark Forest, Mushroom, Lush Caves) and
@@ -138,7 +138,7 @@ the frame on its pad brings you back.
 (Wilds Pass holders and their party), `/cf gates`.
 
 **Echoes.** Once a day step onto the Calendar's amethyst sill east of the plaza for an Echo; the Chronicler beside the
-Curator trades them for prizes, and Sunday at 20:00 a raffle draws from the week's Echoes (`/cf echoes`).
+Calendar trades them for prizes, and Sunday at 20:00 a raffle draws from the week's Echoes (`/cf echoes`).
 
 **Deeds.** Achievements in the Confluence Deeds tab of the Advancements screen (L), with toasts, Deed Points on the hub's
 board and three titles to earn (`/cf deeds`).
@@ -148,8 +148,10 @@ hopper at the right end of the row under the pack's cells) or `/cf pack overflow
 stack of the same item in a pack fills first, then that pack's empty cells, then the other packs in order; shulker boxes
 and Breach gear never flow, and packs are put away in the Breaches.
 
-**Hub signs.** Floating names over the hub's places (the dais, the plaza, every gate, the Records, the Calendar, the
-Market, the Breaches, the Arena and the Spire) turn to face you; the signs with the rules are still beside them.
+**Hub signs.** Floating names hang just under each gate's arch, saying what its sign used to say (the World, Quarry,
+Nether, End and Raid gates have no signs now), over the Records (a sunken records catalog under it, its lectern's book
+listing every board's top ten), and over the bridges to the Market, the Breaches, the Town Portals, the Arena and Combat
+Training where they leave the central island. The dais's key cards and the Calendar's sign still stand.
 
 ## If it does not work
 
