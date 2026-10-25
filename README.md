@@ -46,7 +46,8 @@ and a line `Confluence client ready`.
 
 ## 3. Join
 
-1. Tell Bibidi your exact Minecraft name so he can whitelist you.
+1. Type your exact Minecraft name, and nothing else, in **#whitelist-requests** on the Discord server:
+   the bot opens a private ticket for you, and you get a DM once the staff have whitelisted you.
 2. Start the Fabric profile, Multiplayer, Add Server, address `100.x.y.z` (the address from
    step 2; the default port is fine), Join.
 3. You should land in the hub with the Confluence HUD: a nine-slot ability bar, your health and
@@ -109,7 +110,11 @@ Combat mode in the wilds (the survival world, its Nether and End) needs the **Wi
 (everyone at the kill gets a Dragon Egg, party members in the End too) and trade the egg to the Town Warden; until then B
 keeps you in survival mode out there (the hub, the arena and the Breaches stay combat), and `/cf wilds` shows your pass.
 `/cf lock` then a right-click locks a chest, door or trapdoor to you (`/cf lock add <name>` shares
-it). A sign with `[lift]` on its second line is a lift: put one on each floor straight above each
+it; `/cf lock persist` keeps locking whatever you right-click until you type it again). A locked
+wooden or copper door shuts itself 3 s after you open it, and a locked double door swings as one.
+A Name Tag titles a chest or barrel: one named at an anvil at once, a plain one opens a window
+to type it (a new title uses up the tag); sneak + right-click with one shows the title on its front.
+A sign with `[lift]` on its second line is a lift: put one on each floor straight above each
 other, left-click a lift sign to ride up and right-click to ride down (sneak to break the sign).
 Dying in the survival world drops your bag where you died (your hotbar slot 1, worn armour,
 off-hand, shulker boxes and Breach gear stay) and resets your XP levels; the map's skull shows the spot
