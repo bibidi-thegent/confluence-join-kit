@@ -67,7 +67,7 @@ and a line `Confluence client ready`.
 | Shift | Evade (dodge roll); C crouches in combat mode |
 | B | Switch between combat mode and survival mode |
 | K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery; the last tab, Professions, shows each profession's Knack, ranks and Prime |
-| M | Map (party members are marked; a skull marks where your last survival death dropped your bag) |
+| M | Map (party members are marked; a skull marks where your last survival death dropped your bag). Right-click a spot to set a waypoint there (the server asks for its name); right-click its pennant (or its name) to guide to it, rename it, share it with your party or remove it. The guided one, else your death skull, gets an arrow with its distance right of the hotbar and a column of light at the spot |
 | I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault). A pack's window has the **Overflow** button, the hopper at the right end of the row under the pack's cells: switched on, what you pick up with a full bag flows into that pack |
 | V | Town edit mode (mayors only) |
 | (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
