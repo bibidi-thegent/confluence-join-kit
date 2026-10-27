@@ -10,6 +10,9 @@ zip and replace the jars.
 
 **Player Guide:** https://github.com/bibidi-thegent/confluence-join-kit/blob/main/PLAYER-GUIDE.md (every class, profession and system; its top line says when it last changed).
 
+**Wiki:** https://bibidi-thegent.github.io/confluence-wiki/ (the Player Guide a page at a time,
+every command, the leaderboards and every update; easy to read on a phone).
+
 | What | Value |
 | --- | --- |
 | Minecraft | 26.2 (exactly; not 26.3) |
