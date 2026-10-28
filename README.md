@@ -70,7 +70,7 @@ and a line `Confluence client ready`.
 | Shift | Evade (dodge roll); C crouches in combat mode |
 | B | Switch between combat mode and survival mode |
 | K | Spell Book: every ability explained, swap your class with the Play button; the Mastery row under Q picks your level-20 Mastery; the last tab, Professions, shows each profession's Knack, ranks and Prime |
-| M | Map (party members are marked; a skull marks where your last survival death dropped your bag). Right-click a spot to set a waypoint there (the server asks for its name); right-click its pennant (or its name) to guide to it, rename it, share it with your party or remove it. The guided one, else your death skull, gets an arrow with its distance right of the hotbar and a column of light at the spot |
+| M | Map (party members are marked; a skull marks where your last survival death dropped your bag; right-click it to remove it, which asks first, or to set a waypoint on its spot). Right-click a spot to set a waypoint there (the server asks for its name); right-click its pennant (or its name) to guide to it, rename it, share it with your party or remove it. The guided one, else your death skull, gets an arrow with its distance right of the hotbar and a column of light at the spot |
 | I | Inventory: the Packs and Vault tabs on its top edge, the Sort button under it (click sorts the bag, never the hotbar; right-click changes the mode: Category, Block type, A-Z). A chest, barrel, shulker box, pack or vault window has Sort too (it sorts that container) and **Deposit** beside it: every bag stack whose item is already in the chest goes into it (never hotbar slot 1, your armour, the off-hand or Breach gear; off on the vault). A pack's window has the **Overflow** button, the hopper at the right end of the row under the pack's cells: switched on, what you pick up with a full bag flows into that pack |
 | V | Town edit mode (mayors only) |
 | (unbound) | Toggle meter: the damage meter shows by itself in a party during a Breach or Manor run; bind a key in Options > Controls > Confluence combat to show it solo or hide it |
@@ -120,11 +120,11 @@ to type it (a new title uses up the tag); sneak + right-click with one shows the
 A sign with `[lift]` on its second line is a lift: put one on each floor straight above each
 other, left-click a lift sign to ride up and right-click to ride down (sneak to break the sign).
 Dying in the survival world drops your bag where you died (your hotbar slot 1, worn armour,
-off-hand, shulker boxes and Breach gear stay) and resets your XP levels; the map's skull shows the spot
-until you walk back to it. A red skull beside your target's name means a ready key would kill it now: that key's
-cap is outlined in red. Heals float as green numbers over the player they land on and your log names both sides ("You
-healed Bob 570"); a heal past full leaves a small shield. When a run ends a breakdown of everyone's damage and healing
-opens (Esc closes it) and goes to chat; `/cf meter` shows it again.
+off-hand, shulker boxes and Breach gear stay) and resets your XP levels; the map's skull shows the spot until you walk
+back to it or remove it on the map. A red skull beside your target's name means a ready key would kill it now: that
+key's cap is outlined in red. Heals float as green numbers over the player they land on and your log names both sides
+("You healed Bob 570"); a heal past full leaves a small shield. When a run ends a breakdown of everyone's damage and
+healing opens (Esc closes it) and goes to chat; `/cf meter` shows it again.
 
 **The raid.** Threshold Manor is entered at the **Raid Gate**: walk out along the plaza's east arm to the
 terrace and step through the dark oak gate (its floating name reads "Raid Gate", "Threshold Manor"); its menu lists the two manor
