@@ -98,13 +98,14 @@ with `/cf party share off` (and on again with `/cf party share on`). Every tenth
 Mining, Excavating and Lumberjack have their full ranks: Ore Sense (from Mining 10: craft a Prospector's Fork from two
 iron ingots side by side over a stick, hold an ore's metal in your off hand and left-click stone; three sonar waves
 flash that ore through the stone, then the fork rings again after a few minutes), Breaker Charges (sneak + right-click
-TNT with a pickaxe, from 20; only where TNT may go off, which is the Quarry), Unearthing (digging turns up finds the Hub
-Market buys, from Excavating 5), Clear Cut, Seedfall and Lumber Yard (Burrow and Hollow Sense were removed on 2026-10-22).
-The Senses have an unbound show / hide key in Controls ('Deep, Beast Sense: show / hide'; the fork's ping is never hidden).
-Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds, from Farming 10), the
-Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches come up as tools, armour,
-books and finds the Hub Market buys, from Fishing 5), Hooked (reel in a mob to shake a drop off it), Ice Fishing, Enchanted
-Lines and Deep Sense (treasure hotspots shimmer on the water while you hold a rod, from Fishing 35; the same Senses key).
+TNT with a pickaxe, from 20; only where TNT may go off, which is the Quarry), Unearthing (digging turns up finds the
+Chronicler buys, from Excavating 5), Clear Cut, Seedfall and Lumber Yard (Burrow and Hollow Sense were removed on
+2026-10-22). The Senses have an unbound show / hide key in Controls ('Deep, Beast Sense: show / hide'; the fork's ping
+is never hidden). Farming and Fishing have theirs too: Replant (a ripe crop broken with a hoe replants from your seeds,
+from Farming 10), the Tables (farm foods and fish fill you more), Hedge Finds and Greenhouse; Treasure Lines (catches
+come up as tools, armour, books and finds the Chronicler buys, from Fishing 5), Hooked (reel in a mob to shake a drop
+off it), Ice Fishing, Enchanted Lines and Deep Sense (treasure hotspots shimmer on the water while you hold a rod, from
+Fishing 35; the same Senses key).
 
 Chat commands worth knowing: `/cf kit` opens the class picker, `/cf loadout` picks your abilities
 from the pools, `/cf party invite <name>` and `/cf party accept` form a party, `/cf hub` returns
